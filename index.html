@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeToPay Basic</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="phone">
+    <div id="authScreen">
+      <div class="logo">TimeToPay</div>
+      <h1 style="text-align:center; font-size:52px;">Welcome Back</h1>
+      <p class="muted" style="text-align:center;">Sign in to continue.</p>
+      <form id="authForm" class="form">
+        <label>EMAIL ADDRESS</label>
+        <input id="email" type="email" placeholder="name@gmail.com" required />
+        <label>PASSWORD</label>
+        <input id="password" type="password" placeholder="******" required />
+        <div id="passwordRules" class="password-rules"></div>
+        <button class="primary" type="submit">Sign in / Create Account</button>
+      </form>
+      <div id="authError" class="error"></div>
+    </div>
+
+    <div id="appScreen" class="hidden">
+      <button id="profileBtn" class="profile-icon-btn" title="Profile">👤</button>
+      <div id="screenHome"></div>
+      <div id="screenTransactions" class="hidden"></div>
+      <div id="screenBudgets" class="hidden"></div>
+      <div id="screenBills" class="hidden"></div>
+      <div id="screenAlerts" class="hidden"></div>
+      <div id="screenReports" class="hidden"></div>
+      <div id="screenProfile" class="hidden"></div>
+      <div id="appError" class="error"></div>
+    </div>
+
+    <nav class="bottom hidden" id="bottomNav">
+      <button data-tab="home" class="active"><span class="dot"></span><span>Home</span></button>
+      <button data-tab="transactions"><span class="dot"></span><span>Transactions</span></button>
+      <button data-tab="budgets"><span class="dot"></span><span>Budget</span></button>
+      <button data-tab="bills"><span class="dot"></span><span>Bills</span></button>
+      <button data-tab="alerts"><span class="dot"></span><span>Alerts</span></button>
+      <button data-tab="reports"><span class="dot"></span><span>Reports</span></button>
+    </nav>
+  </div>
+
+  <div class="demo-tools">
+    <button id="resetDemoBtn" class="reset-demo-btn" type="button">Reset Demo</button>
+    <button id="demoIncomeBtn" class="admin-btn" type="button">Add Demo Income</button>
+    <button id="demoExpenseBtn" class="admin-btn" type="button">Add Demo Expense</button>
+    <button id="demoRefundBtn" class="admin-btn" type="button">Add Demo Refund</button>
+    <button id="demoBudgetsBtn" class="admin-btn" type="button">Add Demo Budgets</button>
+    <button id="demoBillsBtn" class="admin-btn" type="button">Add Demo Bills</button>
+  </div>
+
+  <div id="leaveWarningModal" class="modal-backdrop hidden">
+    <div class="warning-modal">
+      <div class="warning-title">Unsaved Changes</div>
+      <div class="warning-text">Please save changes before leaving, or cancel the edit.</div>
+      <div class="warning-actions">
+        <button id="stayEditingBtn" class="ghost" type="button">Stay Here</button>
+        <button id="cancelAndLeaveBtn" class="primary" type="button">Cancel Edit & Leave</button>
+      </div>
+    </div>
+  </div>
+  <script src="./js/storage.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/transactions.js"></script>
+  <script src="./js/budgets.js"></script>
+  <script src="./js/bills.js"></script>
+  <script src="./js/alerts.js"></script>
+  <script src="./js/reports.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/demo.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
